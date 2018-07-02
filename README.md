@@ -19,11 +19,11 @@ Here, I have implemented CNN (Convolution Neural Network) using Keras.
     python test_model.py
     ```
     
-3. To Test the model with your own hand, first run the file capture.py then place your hand in the green square and then press 'c' to        capture the individual picture. And in this code you can capture 5 pictures.
+3. To Test the model with your own hand, first run the file capture.py then place your hand in the green square and tune the hsv values until your hand becomes all white and background becomes all black and then press 'c' to        capture the individual picture. And in this code you can capture 5 pictures.
     ```
     python capture.py
     ```
-    Then copy the pictures you just captured which is located in the same folder as capture.py and     place it in the folder named predicting_data.
+    Then copy the pictures you just captured which is located in the same folder as capture.py and  place it in the folder named predicting_data.
     And run the following command
     ```
     python test_model.py
