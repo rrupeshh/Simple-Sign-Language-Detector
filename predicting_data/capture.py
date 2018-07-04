@@ -23,7 +23,7 @@ cv2.createTrackbar("U - S", "Trackbars", 255, 255, nothing)
 cv2.createTrackbar("U - V", "Trackbars", 255, 255, nothing)
 
 while True:
-    total_pic = 1
+    total_pic = 5
     ret, frame = cam.read()
     frame = cv2.flip(frame,1)
 
@@ -53,6 +53,8 @@ while True:
     
     if cv2.waitKey(1) == ord('c'):
         img_name = "{}.png".format(img_counter)
+        #imcrop = mask[102:298, 427:623]
+        #gray = cv2.cvtColor(imcrop, cv2.COLOR_BGR2GRAY)
         save_img = cv2.resize(mask, (image_x, image_y))
         cv2.imwrite(img_name, save_img)
         print("{} written!".format(img_name))
