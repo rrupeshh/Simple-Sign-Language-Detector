@@ -7,7 +7,13 @@ def nothing(x):
     pass
 
 
-image_x, image_y = 200, 200
+image_x, image_y = 64, 64
+
+def create_folder(folder_name):
+    if not os.path.exists('./mydata/' + folder_name):
+        os.mkdir('./mydata/' + folder_name)
+        os.mkdir('./mydata/' + folder_name + '/' +'training_set')
+        os.mkdir('./mydata/' + folder_name + '/' +'test_set')
 
 cam = cv2.VideoCapture(0)
 
