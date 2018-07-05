@@ -69,7 +69,7 @@ def capture_images(ges_name):
             if cv2.waitKey(1) == ord('c'):
 
                 if t_counter <= 350:
-                    img_name = "./mydata/training_set/C/{}.png".format(training_set_image_name)
+                    img_name = "./mydata/" + str(ges_name) + "training_set/{}.png".format(training_set_image_name)
                     save_img = cv2.resize(mask, (image_x, image_y))
                     cv2.imwrite(img_name, save_img)
                     print("{} written!".format(img_name))
@@ -77,7 +77,7 @@ def capture_images(ges_name):
 
 
                 if t_counter > 350 and t_counter <= 400:
-                    img_name = "./mydata/test_set/C/{}.png".format(test_set_image_name)
+                    img_name = "./mydata/" + str(ges_name) + "test_set/{}.png".format(test_set_image_name)
                     save_img = cv2.resize(mask, (image_x, image_y))
                     cv2.imwrite(img_name, save_img)
                     print("{} written!".format(img_name))
