@@ -17,6 +17,8 @@ def create_folder(folder_name):
 
         
 def capture_images(ges_name):
+    create_folder(str(ges_name))
+    
     cam = cv2.VideoCapture(0)
 
     cv2.namedWindow("test")
