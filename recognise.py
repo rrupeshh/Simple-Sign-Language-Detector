@@ -92,13 +92,18 @@ img_text = ''
 while True:
     ret, frame = cam.read()
     frame = cv2.flip(frame,1)
-
+    l_h = cv2.getTrackbarPos("L - H", "Trackbars")
+    l_s = cv2.getTrackbarPos("L - S", "Trackbars")
+    l_v = cv2.getTrackbarPos("L - V", "Trackbars")
+    u_h = cv2.getTrackbarPos("U - H", "Trackbars")
+    u_s = cv2.getTrackbarPos("U - S", "Trackbars")
+    u_v = cv2.getTrackbarPos("U - V", "Trackbars")
 
 
     img = cv2.rectangle(frame, (425,100),(625,300), (0,255,0), thickness=2, lineType=8, shift=0)
 
-    lower_blue = np.array([0, 92, 0])
-    upper_blue = np.array([179, 255, 255])
+    lower_blue = np.array([l_h, l_s, l_v])
+    upper_blue = np.array([u_h, u_s, u_v])
     imcrop = img[102:298, 427:623]
     hsv = cv2.cvtColor(imcrop, cv2.COLOR_BGR2HSV)
     mask = cv2.inRange(hsv, lower_blue, upper_blue)
