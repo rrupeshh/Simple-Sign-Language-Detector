@@ -61,23 +61,37 @@ test_set = test_datagen.flow_from_directory(
         batch_size=32,
         class_mode='categorical')
 
-classifier.fit_generator(
+model = classifier.fit_generator(
         training_set,
         steps_per_epoch=800,
-        epochs=30,
+        epochs=25,
         validation_data = test_set,
         validation_steps = 6500
       )
 
-#Saving the model
+'''#Saving the model
 import h5py
-classifier.save('Trained_model.h5')
+classifier.save('Trained_model.h5')'''
 
+print(model.history.keys())
+import matplotlib.pyplot as plt
+# summarize history for accuracy
+plt.plot(model.history['acc'])
+plt.plot(model.history['val_acc'])
+plt.title('model accuracy')
+plt.ylabel('accuracy')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+# summarize history for loss
 
-
-
-
-
+plt.plot(model.history['loss'])
+plt.plot(model.history['val_loss'])
+plt.title('model loss')
+plt.ylabel('loss')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
 
 
 
