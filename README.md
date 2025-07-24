@@ -2,6 +2,9 @@
 A simple CNN project for detecting american sign language.
 Here, I have implemented CNN (Convolution Neural Network) using Keras.
 
+Complete Walkaround is covered in this blog:  [Building a Simple Sign Language Detector with CNN]([https://link-url-here.org](https://rupeshpoudel.com.np/blog/simple-sign-language-detector-cnn))
+
+
 ### Tools Used
 1. Python 3
 2. OpenCV 3
